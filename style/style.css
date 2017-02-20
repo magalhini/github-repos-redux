@@ -1,0 +1,20 @@
+.container__github {
+  max-width: 40em;
+  margin: 3em auto 0;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+.badge {
+  margin-right: 5px;
+}
+
+.card {
+  margin-bottom: 1em;
+}
+
+.repos__list {
+  margin-top: 2em;
+}
