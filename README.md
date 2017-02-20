@@ -20,13 +20,15 @@ A sample application (in progress and subject to change and experiments) that fe
 
 - Webpack 2
 
-### To implement:
+### To implement & tinker with:
 
-- React Router
-- Redux Promise
-- Webpack 2 with Sass + postCSS
-- Webpack 2 production build
-- Several reducers
+- [ ] React Router for actions
+- [ ] Redux Promise
+- [ ] Remove Bootstrap from CDN
+- [ ] Webpack 2 with Sass + postCSS
+- [ ] Webpack 2 production build
+- [ ] Several reducers
+- [ ] Tests should successfully test async operations
 
 ## To run this app:
 
