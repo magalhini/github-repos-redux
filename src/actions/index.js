@@ -11,22 +11,31 @@ export function sortByStars() {
   };
 }
 
+const userFetchFailed = (error) => ({
+  type: GET_USER_FAILED,
+  error
+});
+
+const getUserRepos = (data) => ({
+  type: GET_USER,
+  payload: data
+});
+
+const setUsername = (username) => ({
+  type: SET_USER,
+  payload: username
+});
+
 export function searchUser(username) {
   const url = `https://api.github.com/users/${username}/repos`;
   const request = axios.get(url);
 
   return (dispatch) => {
-    request.then(({data}) => {
-      dispatch({
-        type: GET_USER,
-        payload: data
-      })
-    }).catch(error => dispatch({
-      type: GET_USER_FAILED,
-      error
-    })).then(res => dispatch({
-      type: SET_USER,
-      payload: username
-    }))
+    request
+    .then(({ data }) => {
+      dispatch(getUserRepos(data))
+    })
+    .catch(error => dispatch(userFetchFailed(error)))
+    .then(res => dispatch(setUsername(username)))
   };
 }

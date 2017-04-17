@@ -44,5 +44,6 @@ class Search extends React.Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ searchUser }, dispatch);
 }
+
 export { Search as PureSearch };
 export default connect(null, mapDispatchToProps)(Search);

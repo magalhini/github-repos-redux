@@ -56,8 +56,9 @@ function mapStateToProps(state) {
   return { repos: state.repos };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions, dispatch);
-}
+const mapDispatchToProps = dispatch => ({
+  searchUser: username => dispatch(actions.searchUser(username)),
+  sortByStars: () => dispatch(actions.sortByStars()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);
